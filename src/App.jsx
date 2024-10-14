@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Dashboard from "./pages/dashboard"
 import Home from "./pages/home"
-import Recipe from "./pages/recipe"
+import Recipes from "./pages/recipe"
 import RecipeDetail from "./pages/recipeDetail"
 import AboutUs from "./pages/aboutus"
 import Profile from "./pages/profile"
@@ -18,14 +18,14 @@ function App() {
 
         <Routes>
 
-          <Route path="/auth">
+          <Route path="/signup">
             <Route index element={<SignUp />} />
             <Route path="login" element={<Login />} />
           </Route>
 
           <Route path="/" element={<Dashboard />}>
             <Route index element={<Home />} />
-            <Route path="/recipe" element={<Recipe />} />
+            <Route path="/recipes" element={<Recipes />} />
             <Route path="/addRecipe" element={<AddRecipe />} />
             <Route path="/recipe/:id" element={<RecipeDetail />} />
             <Route path="/aboutus" element={<AboutUs />} />
