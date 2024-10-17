@@ -64,44 +64,48 @@ export default function Home() {
             </div>
 
             {/* Trending Recipe */}
-            <header className="container mx-auto flex justify-between h-20 mt-10 bg-slate-400">
-                <h2 className="text-3xl font-bold ml-1">Trending Recipe</h2>
-                <Link className="text-[#B55D51] text-1xl font-semibold mt-8 mr-1" to={"/recipes"}>View more</Link>
-            </header>
-            <section className="container mx-auto text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-wrap m-4">
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
+            <div className="container mx-auto ">
+                <header className="flex justify-between h-20 mt-10">
+                    <h2 className="text-3xl font-bold ml-1">Trending Recipe</h2>
+                    <Link className="text-[#B55D51] text-1xl font-semibold mt-8 mr-1" to={"/recipes"}>View more</Link>
+                </header>
+                <section className="container mx-auto text-gray-600 body-font">
+                    <div className="container px-5 py-24 mx-auto">
+                        <div className="flex flex-wrap m-4">
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
 
             {/* Explore Recipes */}
-            <header className="container mx-auto flex justify-between h-20">
-                <h2 className="text-3xl font-bold ml-1">Explore Recipes</h2>
-                <Link className="text-[#B55D51] text-1xl font-semibold mt-8 mr-1" to={"/recipes"}>View more</Link>
-            </header>
-            <section className="container mx-auto text-gray-600 body-font m-1">
-                <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-wrap m-4">
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
-                        <Card1 />
+            <div className="container mx-auto ">
+                <header className="flex justify-between h-20">
+                    <h2 className="text-3xl font-bold ml-1">Explore Recipes</h2>
+                    <Link className="text-[#B55D51] text-1xl font-semibold mt-8 mr-1" to={"/recipes"}>View more</Link>
+                </header>
+                <section className="container mx-auto text-gray-600 body-font m-1">
+                    <div className="container px-5 py-24 mx-auto">
+                        <div className="flex flex-wrap m-4">
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                            <Card1 />
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
 
             {/* subscribtion post */}
             <div className="flex flex-col justify-center items-center bg-[#FFF0ED] w-full p-10">
@@ -114,26 +118,26 @@ export default function Home() {
             </div>
 
             {/* Category Cards */}
-            <header className="container mx-auto flex justify-between h-20 ">
-                <h2 className="text-3xl font-bold ml-1">Popular Category</h2>
-                <Link className="text-[#B55D51] text-1xl font-semibold mt-8 mr-1" to={"/recipes"}>View more</Link>
-            </header>
-            <section className="container mx-auto text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-wrap m-4">
-                        <CategoryCard/>
-                        <CategoryCard/>
-                        <CategoryCard/>
-                        <CategoryCard/>
-                        <CategoryCard/>
-                        <CategoryCard/>
-                        <CategoryCard/>
-                        <CategoryCard/>
+            <div className="container mx-auto mt-20">
+                <header className="flex justify-between h-20 ">
+                    <h2 className="text-3xl font-bold ml-1">Popular Category</h2>
+                    <Link className="text-[#B55D51] text-1xl font-semibold mt-8 mr-1" to={"/recipes"}>View more</Link>
+                </header>
+                <section className="container mx-auto text-gray-600 body-font">
+                    <div className="container px-5 py-24 mx-auto">
+                        <div className="flex flex-wrap m-4">
+                            <CategoryCard />
+                            <CategoryCard />
+                            <CategoryCard />
+                            <CategoryCard />
+                            <CategoryCard />
+                            <CategoryCard />
+                            <CategoryCard />
+                            <CategoryCard />
+                        </div>
                     </div>
-                </div>
-            </section>
-            
-
+                </section>
+            </div>
 
         </div>
 
