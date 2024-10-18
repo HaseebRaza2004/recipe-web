@@ -18,11 +18,6 @@ function App() {
 
         <Routes>
 
-          <Route path="/signup">
-            <Route index element={<SignUp />} />
-            <Route path="login" element={<Login />} />
-          </Route>
-
           <Route path="/" element={<Dashboard />}>
             <Route index element={<Home />} />
             <Route path="/recipes" element={<Recipes />} />
@@ -31,6 +26,8 @@ function App() {
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/signup" element={<SignUp/>}/>
+            <Route path="/login" element={<Login/>}/>
           </Route>
 
         </Routes>

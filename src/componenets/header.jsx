@@ -15,7 +15,7 @@ export default function Header() {
                     <Link to={"/aboutus"} className="mr-5 hover:text-gray-900 hover:underline">About Us</Link>
                 </nav>
                 <div className="inline-flex items-center mt-4 md:mt-0">
-                    <Link to={"/auth/login"} className="m-1 border-0 rounded cursor-pointer py-1 px-3 text-black bg-gray-100 hover:bg-gray-200 transition duration-300">
+                    <Link to={"/login"} className="m-1 border-0 rounded cursor-pointer py-1 px-3 text-black bg-gray-100 hover:bg-gray-200 transition duration-300">
                         Log in
                     </Link>
                     <Link to={"/signup"} className=" m-1 border-0 rounded cursor-pointer py-1 px-3 text-white bg-[#B55D51] hover:bg-[#974E44] transition duration-300">
