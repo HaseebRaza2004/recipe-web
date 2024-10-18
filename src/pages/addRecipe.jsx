@@ -14,7 +14,7 @@ export default function AddRecipe() {
 
             {/* Add Recipe Form */}
             <form action=""
-                className="mx-auto my-20  flex flex-col justify-center w-2/3">
+                className="mx-auto my-20 p-6  flex flex-col justify-center w-2/3">
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Title :</label>
                     <input type="text" className="w-full border px-2 py-1 rounded-md " />
