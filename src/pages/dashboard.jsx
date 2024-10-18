@@ -4,11 +4,11 @@ import Footer from "../componenets/footer";
 
 
 export default function Dashboard() {
-    return(
+    return (
         <>
-        <Header/>
-        <Outlet/>
-        <Footer/>
+            <Header />
+            <Outlet />
+            <Footer />
         </>
     )
 };
