@@ -7,7 +7,7 @@ export default function AddRecipe() {
 
             <header className="flex justify-between items-center border-t border-b p-3">
                 <h1 className="text-2xl font-semibold">Create New Recipe</h1>
-                <Link to={"/signup"} className=" m-1 border-0 rounded cursor-pointer py-1 px-3 text-white bg-[#B55D51] hover:bg-[#974E44] transition duration-300">
+                <Link className=" m-1 border-0 rounded cursor-pointer py-1 px-3 text-white bg-[#B55D51] hover:bg-[#974E44] transition duration-300">
                     Save
                 </Link>
             </header>
@@ -17,43 +17,43 @@ export default function AddRecipe() {
                 className="mx-auto my-20 p-6  flex flex-col justify-center w-2/3">
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Title :</label>
-                    <input type="text" className="w-full border px-2 py-1 rounded-md " />
+                    <input type="text" className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Recipe Image :</label>
-                    <input type="file" className="w-full border px-2 py-1 rounded-md " />
+                    <input type="file" className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Describtion :</label>
-                    <input type="text" maxLength={100} className="w-full border px-2 py-1 rounded-md " />
+                    <input type="text" maxLength={100} className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Ingredients :</label>
-                    <textarea type="text" className="w-full border px-2 py-1 rounded-md " />
+                    <textarea type="text" className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Instructions :</label>
-                    <textarea type="text" className="w-full border px-2 py-1 rounded-md " />
+                    <textarea type="text" className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Servings :</label>
-                    <input type="text" className="w-full border px-2 py-1 rounded-md " />
+                    <input type="text" className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Cooking Time :</label>
-                    <input type="time" className="w-full border px-2 py-1 rounded-md " />
+                    <input type="time" className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Prep Time :</label>
-                    <input type="time" className="w-full border px-2 py-1 rounded-md " />
+                    <input type="time" className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Cuisine :</label>
-                    <input type="text" className="w-full border px-2 py-1 rounded-md " />
+                    <input type="text" className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>
                 <div className="my-2">
                     <label className="ml-2 mb-1 font-medium">Calories :</label>
-                    <input type="text" className="w-full border px-2 py-1 rounded-md " />
+                    <input type="text" className="w-full border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" />
                 </div>  
             </form>
 

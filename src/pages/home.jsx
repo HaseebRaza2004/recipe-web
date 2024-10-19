@@ -32,7 +32,7 @@ export default function Home() {
                 </div>
                 <div className="relative flex-2 m-6">
                     <img
-                        src="./public/pic1.png"
+                        src="/pic1.png"
                         alt="Dish"
                         className="rounded-md shadow-xl w-full md:max-w-sm"
                     />
@@ -43,7 +43,7 @@ export default function Home() {
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center p-8 md:p-16">
                 <div className="relative flex-2 m-6">
                     <img
-                        src="./public/pic2.jfif"
+                        src="/pic2.jfif"
                         alt="Dish"
                         className="rounded-md shadow-xl w-full h-[350px] md:max-w-sm"
                     />

@@ -25,7 +25,7 @@ export default function Recipes() {
                 </div>
                 <div className="relative flex-2 m-6">
                     <img
-                        src="./public/pic1.png"
+                        src="/pic1.png"
                         alt="Dish"
                         className="rounded-md shadow-xl w-full md:max-w-sm"
                     />

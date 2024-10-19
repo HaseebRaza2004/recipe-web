@@ -8,7 +8,7 @@ export default function Login() {
                 <div className="flex-1 space-y-4">
                     <img
                         className="w-fuil h-96"
-                        src="./public/pic2.jfif"
+                        src="/pic2.jfif"
                         alt="" />
                 </div>
                 <div className="relative flex-1">

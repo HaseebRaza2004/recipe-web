@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 export default function Card1() {
     return (
-        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <Link to={"/recipe/:id"} className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <a className="block relative h-48 rounded overflow-hidden">
                 <img
                     alt="ecommerce"
@@ -19,6 +20,6 @@ export default function Card1() {
                 </h2>
                 <p className="mt-1">$16.00</p>
             </div>
-        </div>
+        </Link>
     )
 };
