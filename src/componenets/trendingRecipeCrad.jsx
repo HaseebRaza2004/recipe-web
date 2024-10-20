@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
 
 
-export default function Card1() {
-    return (
-        <Link to={"/recipe/:id"} className="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a className="block relative h-48 rounded overflow-hidden">
+export default function TrendingRecipeCard({item}) {
+    return(
+        <Link to={`/recipe/${item.id}`} className="lg:w-1/4 md:w-1/2 p-4 w-full shadow ">
+            <div className="block relative h-48 rounded overflow-hidden">
                 <img
                     alt="ecommerce"
                     className="object-cover object-center w-full h-full block"
-                    src="https://dummyimage.com/420x260"
+                    src={item.image}
                 />
-            </a>
+            </div>
             <div className="mt-4">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                    CATEGORY
+                    {item.cuisine}
                 </h3>
                 <h2 className="text-gray-900 title-font text-lg font-medium">
-                    The Catalyzer
+                    {item.name}
                 </h2>
-                <p className="mt-1">$16.00</p>
+                <p className="mt-1">{item.rating}</p>
             </div>
         </Link>
     )
