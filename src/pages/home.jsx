@@ -33,7 +33,7 @@ export default function Home() {
         axios.get('https://dummyjson.com/recipes?limit=8&skip=25')
             .then((res) => {
                 // console.log("RES in Explore component landing page", res.data.recipes);
-                setMeal(res.data.recipes);
+                setExploreRecipes(res.data.recipes);
                 setLoading(false);
             })
             .catch((err) => {
@@ -42,11 +42,11 @@ export default function Home() {
             })
     }, []);
 
-    // Explore recipes 
+    // Meal recipes 
     useEffect(() => {
         axios.get('https://dummyjson.com/recipes?limit=8&skip=34')
             .then((res) => {
-                console.log("RES in Meal component landing page", res.data.recipes);
+                // console.log("RES in Meal component landing page", res.data.recipes);
                 setMeal(res.data.recipes);
                 setLoading(false);
             })
@@ -184,9 +184,9 @@ export default function Home() {
                                 <div className="container px-5 py-4 mx-auto">
                                     <div className="flex flex-wrap m-4">
                                         {
-                                            meal.map((data)=>{
-                                                return(
-                                                    <MealCard key={data.id} item={data}/>
+                                            meal.map((data) => {
+                                                return (
+                                                    <MealCard key={data.id} item={data} />
                                                 )
                                             })
                                         }

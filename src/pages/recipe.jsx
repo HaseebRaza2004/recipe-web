@@ -9,25 +9,42 @@ export default function Recipes() {
 
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [limit , setLimit] = useState(10);
-    const [skip , setSkip] = useState(10);
+    const [limit, setLimit] = useState(12);
+    const [skip, setSkip] = useState(0);
+    const [total, setTotal] = useState(0);
+    const [search, setSearch] = useState(0);
 
+    // Search Recipe
+    useEffect(()=>{
+        axios.get(`https://dummyjson.com/recipes/search?q=${search}`)
+        .then((res) =>{
+            // console.log("search" , res.data.recipes);
+            setRecipes(res.data.recipes);
+            setLoading(false);
+        })
+        .catch((err)=>{
+            console.log(err);
+            setLoading(false);
+        })
+    },[search])
+
+    // show recipes in recipe page
     useEffect(() => {
         axios.get(`https://dummyjson.com/recipes?limit=${limit}&skip=${skip}`)
             .then((res) => {
-                console.log("res =>", res);
+                // console.log("res =>", res.data);
                 setRecipes(res.data.recipes);
+                setTotal(res.data.total)
                 setLoading(false);
-                // console.log("recipes", recipes);
             })
             .catch((err) => {
                 console.log("error", err)
                 setLoading(false);
             })
-    }, []);
+    }, [limit, skip]);
 
 
-    return ( 
+    return (
         <>
             {
                 loading ? (
@@ -61,46 +78,17 @@ export default function Recipes() {
                             </div>
                         </div>
 
-                        {/* Select Category */}
-                        <Select
-                            className="mt-4 sm:w-[350px] md:w-[400px] lg:w-[450px]"
-                            showSearch
-                            placeholder="Search Recipe"
-                            optionFilterProp="label"
-                            filterSort={(optionA, optionB) =>
-                                (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
-                            }
-                            options={[
-                                {
-                                    value: '1',
-                                    label: 'Not Identified',
-                                },
-                                {
-                                    value: '2',
-                                    label: 'Closed',
-                                },
-                                {
-                                    value: '3',
-                                    label: 'Communicated',
-                                },
-                                {
-                                    value: '4',
-                                    label: 'Identified',
-                                },
-                                {
-                                    value: '5',
-                                    label: 'Resolved',
-                                },
-                                {
-                                    value: '6',
-                                    label: 'Cancelled',
-                                },
-                            ]}
+                        {/* Search Recipe */}
+                        <input 
+                        onChange={(e) => {setSearch(e.target.value)}}
+                        type="text"
+                        placeholder="Search Recipe" 
+                        className="mt-6 sm:w-[350px] md:w-[400px] lg:w-[450px] border-2 border-[#f5dbd5] px-2 py-1 rounded-md focus:outline-[#B55D51]" 
                         />
 
                         {/* Section */}
                         <section className="text-gray-600 body-font">
-                            <div className="container px-5 py-16 mx-auto">
+                            <div className="container px-5 py-10 mx-auto">
                                 <div className="flex flex-wrap -m-4">
                                     {
                                         recipes.map((data) => {
@@ -114,7 +102,14 @@ export default function Recipes() {
                         </section>
 
                         {/* Pagination */}
-                        <Pagination className="mb-10" align="center" defaultCurrent={1} total={60} />
+                        <Pagination
+                            className="mb-10"
+                            lign="center"
+                            defaultCurrent={1}
+                            total={total}
+                            pageSize={limit}
+                            onChange={(num) => setSkip((num - 1) * 12)}
+                        />
 
                     </div>
                 )
