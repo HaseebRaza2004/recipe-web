@@ -9,6 +9,7 @@ import NotFound from "./pages/notFound"
 import AddRecipe from "./pages/addRecipe"
 import SignUp from "./pages/auth/signup"
 import Login from "./pages/auth/login"
+import SaveRecipe from "./pages/saveRcipe"
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/saveRecipe" element={<SaveRecipe/>}/>
           </Route>
 
         </Routes>

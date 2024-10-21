@@ -3,6 +3,7 @@ import RecipeCard from "../componenets/RecipeCard";
 import { Pagination, Select } from "antd";
 import axios from "axios";
 import Loader from "../componenets/loader";
+import { Link } from "react-router-dom";
 
 
 export default function Recipes() {
@@ -12,7 +13,7 @@ export default function Recipes() {
     const [limit, setLimit] = useState(12);
     const [skip, setSkip] = useState(0);
     const [total, setTotal] = useState(0);
-    const [search, setSearch] = useState(0);
+    const [search, setSearch] = useState();
 
     // Search Recipe
     useEffect(()=>{
@@ -26,7 +27,7 @@ export default function Recipes() {
             console.log(err);
             setLoading(false);
         })
-    },[search])
+    },[search]);
 
     // show recipes in recipe page
     useEffect(() => {
@@ -64,9 +65,9 @@ export default function Recipes() {
                                     Maecenas vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit.
                                 </p>
                                 <div className="space-x-4">
-                                    <button className="bg-[#B55D51] text-white py-2 px-6 rounded hover:bg-[#974E44] transition duration-300">
+                                    <Link to={"/signup"} className="bg-[#B55D51] text-white py-2 px-6 rounded hover:bg-[#974E44] transition duration-300">
                                         Sign up
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="relative flex-2 m-6">
