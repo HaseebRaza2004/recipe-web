@@ -6,8 +6,7 @@ import { AuthContext } from "../context/authContext";
 export default function Header() {
 
     const {user} = useContext(AuthContext);
-    console.log("user in header",user);
-    
+    // console.log("user in header",user);
 
     return (
         <header className="text-gray-600 body-font">

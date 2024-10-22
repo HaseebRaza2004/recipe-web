@@ -13,17 +13,17 @@ export default function Login() {
 
     // email and password
     const handleLogin = () => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                // console.log("user", user);
-                navigate("/");
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log("error ", errorCode, errorMessage);
-            });
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    // console.log("user", user);
+                    navigate("/");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log("error ", errorCode, errorMessage);
+                });
     };
 
     // google
@@ -86,7 +86,8 @@ export default function Login() {
                                 placeholder="Re-Enter your Password"
                                 type="password" />
                             <div className="flex flex-row my-6">
-                                <input type="checkbox" />
+                                <input type="checkbox"
+                                />
                                 <span className="text-slate-400 ml-2 text-[12px]">Remember me</span>
                             </div>
                             <button onClick={handleLogin} className="w-32 text-center border-0 rounded-md cursor-pointer py-1 px-3 text-white bg-[#B55D51] hover:bg-[#974E44] transition duration-300">

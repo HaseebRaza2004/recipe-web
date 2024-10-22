@@ -14,7 +14,7 @@ export default function AuthContextProvider({ children }) {
 
     function onAuthChange(user) {
         if (user) {
-            console.log("user", user);
+            // console.log("user", user);
             setUser({
                 isLogin: true,
                 userInfo: {

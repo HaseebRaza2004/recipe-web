@@ -1,8 +1,7 @@
 import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, storage } from "../../utils/utils";
-import { ref } from "firebase/storage";
+import { auth } from "../../utils/utils";
 
 
 export default function SignUp() {
@@ -12,23 +11,25 @@ export default function SignUp() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [image, setImage] = useState(null);
+    const [acceptTerms, setAcceptTerms] = useState(null);
 
     // email and password
     const handleSignup = () => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log(user);
-
-                // const userRef = ref(storage , `user/${user.uid}`);
-
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log("error ", errorCode, errorMessage);
-            });
+        if (!acceptTerms) {
+            return alert("Please accept the terms and conditions");
+        } else {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    // console.log(user);
+                    navigate("/");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log("error ", errorCode, errorMessage);
+                });
+        }
     };
 
     // google
@@ -62,17 +63,17 @@ export default function SignUp() {
     // const handleFacebookSignup = () => {
     //     const provider = new FacebookAuthProvider();
     //     // provider.addScope('user_birthday'); 
-    
+
     //     signInWithPopup(auth, provider)
     //         .then((result) => {
     //             // Facebook Access Token can be used for accessing Facebook API
     //             const user = result.user;
     //             const credential = FacebookAuthProvider.credentialFromResult(result);
     //             const accessToken = credential.accessToken;
-    
+
     //             console.log("User signed in:", user);
     //             // You can do something with the access token if needed
-    
+
     //             // Navigate to home or any other route after successful sign in
     //             navigate("/");
     //         })
@@ -81,7 +82,7 @@ export default function SignUp() {
     //             const errorMessage = error.message;
     //             const email = error.customData?.email; // Optional chaining to prevent errors if `customData` is undefined
     //             const credential = FacebookAuthProvider.credentialFromError(error);
-    
+
     //             console.error("Error during Facebook sign-in:", errorCode, errorMessage);
     //             // Optionally, display error to the user here
     //         });
@@ -123,14 +124,15 @@ export default function SignUp() {
                                 type="password"
                             />
                             <input
-                                onChange={(e) => setImage(e.target.file[0])}
+                                // onChange={(e) => setImage(e.target.files[0])}
                                 required
                                 className="border py-2 px-1 my-1 rounded-sm focus:outline-[#B55D51]"
-                                placeholder="Enter your Image"
-                                type="file"
+                                placeholder="Re-Enter your password"
+                                type="password"
                             />
                             <div className="flex flex-row my-6">
                                 <input type="checkbox"
+                                    onChange={(e) => setAcceptTerms(e.target.checked)}
                                 />
                                 <span className="text-slate-400 ml-2 text-[12px]">I agree to the terms & policy</span>
                             </div>
